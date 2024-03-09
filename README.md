@@ -35,6 +35,11 @@ npm i -D husky
 npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-standard
 ~~~
 
+- Jest - Framework de teste 
+~~~bash
+npm install -D jest ts-jest @types/jest
+~~~
+
 ### Scriptis adicionados
 ~~~bash
 "scripts": {
@@ -43,3 +48,4 @@ npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslin
     "build": "tsc"
   }
 ~~~
+

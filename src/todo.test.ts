@@ -18,7 +18,7 @@ describe('TodoList', () => {
       expect(tasks).toEqual([anyTask])
     })
 
-    test('Add uma task valida', () => {
+    test('Add uma task invalida', () => {
       const todoInstance = new TodoList()
       const x: any = {
         a: 'aaaaaa'
