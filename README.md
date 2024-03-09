@@ -41,5 +41,5 @@ npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslin
     "start": "ts-node src/index.js",
     "start:prod": "npm run build && node dist/index.js",
     "build": "tsc"
-  },
+  }
 ~~~
