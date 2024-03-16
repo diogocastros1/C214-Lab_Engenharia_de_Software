@@ -49,3 +49,10 @@ npm install -D jest ts-jest @types/jest
   }
 ~~~
 
+
+---
+## Testes Mock
+
+### Injeção de dependências
+
+Fazer o teste dependa de uma interface controlada e nao externa.

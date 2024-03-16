@@ -1,6 +1,6 @@
 import readline from 'readline'
 import { promisify } from 'util'
-import { Task, TodoList } from './TodoList'
+import { Task, TodoList } from './services/TodoList'
 
 const reader = readline.createInterface({
   input: process.stdin,
