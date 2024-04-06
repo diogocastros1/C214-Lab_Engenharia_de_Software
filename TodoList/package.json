@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "start:prod": "npm run build && node dist/index.js",
+    "run:prod": "node dist/index.js",
     "build": "tsc",
     "prepare": "husky",
     "test:unit": "jest",

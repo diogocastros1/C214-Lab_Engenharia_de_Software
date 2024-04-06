@@ -36,7 +36,7 @@ const makeTodoListStub = (): TodoListRepository => {
         error: false
       }
     }
-    update(task: UpdateTask) {
+    update(id: number,task: UpdateTask) {
       return {
         success: true,
         error: false
@@ -95,8 +95,12 @@ describe('TodoList', () => {
         id: 0,
         description: 'Atualizacao da descriacao.'
       }
-      todoInstance.updateTask(update)
+      todoInstance.updateTask(update.id,update)
       console.log(todoInstance.getTasks())
+      jest.spyOn(repositoryStub, 'getAll').mockReturnValueOnce({
+        success: [anyTaskUpdate],
+        error: false
+      })
       const tasks = todoInstance.getTasks()
       expect(tasks).toEqual([anyTaskUpdate])
     })
@@ -107,6 +111,10 @@ describe('TodoList', () => {
       const todoInstance = new TodoList(repositoryStub)
       todoInstance.add(anyTask)
       todoInstance.removeTask(0)
+      jest.spyOn(repositoryStub, 'getAll').mockReturnValueOnce({
+        success: [],
+        error: false
+      })
       const tasks = todoInstance.getTasks()
       expect(tasks).toEqual([])
     })

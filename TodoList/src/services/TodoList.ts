@@ -7,6 +7,7 @@ export class TodoList implements TodoListServices{
   private repository: TodoListRepository
   constructor(todoListRepository: TodoListRepository) {
     this.repository = todoListRepository
+    
   }
   add(task: Task) {
     const missingProperties = ['title', 'description', 'targetDate'].filter(
@@ -36,8 +37,11 @@ export class TodoList implements TodoListServices{
     }
   }
 
-  updateTask(task: UpdateTask) {
-    this.repository.update(task)
+  updateTask(index: number, task: UpdateTask) {
+    if(!task){
+      return 'Task not found'
+    }  
+    this.repository.update(index, task)
   }
 
   removeTask(index: number) {
