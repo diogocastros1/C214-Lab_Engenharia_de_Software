@@ -1,3 +1,5 @@
+[![CI-CD](https://github.com/diogocastros1/C214-TodoList/actions/workflows/cicd.yml/badge.svg)](https://github.com/diogocastros1/C214-TodoList/actions/workflows/cicd.yml)
+
 # C214-Lab | Engenharia de Software
 
 ## 🛠️ Ferramentas utilizadas
