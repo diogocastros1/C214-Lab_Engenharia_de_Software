@@ -46,6 +46,12 @@ jobs:
       
       - name: Install dependencies
         run: npm i
+      
+      - name: Run typescript dependencies
+        run: 
+          npm install -D typescript
+          npm install -D @types/node
+          npm install -D ts-node-dev
 
       - name: Run build
         run: npm run build
