@@ -1,6 +1,8 @@
 import readline from 'readline'
 import { promisify } from 'util'
-import { Task, TodoList } from './services/TodoList'
+import { TodoList } from './services/TodoList'
+import { ToDoListAdapter } from './adapters/TodoListAdapter'
+import { Task } from './models/Task'
 
 const reader = readline.createInterface({
   input: process.stdin,
@@ -13,10 +15,11 @@ async function getUserInput(prompt: string): Promise<any> {
   return await userInput(prompt)
 }
 
-const todoList = new TodoList()
+const todoListRepository = new ToDoListAdapter()
+const todoList = new TodoList(todoListRepository)
 
 async function addNewTask() {
-  const newTask: Task = {
+  const newTask: Task = { 
     title: '',
     description: '',
     targetDate: '',
@@ -31,15 +34,15 @@ async function addNewTask() {
 }
 
 async function startTodoList() {
-  const userChoise = await getUserInput('Digite 1 para adicionar uma tarefa e 0 para sair: ')
+  const userChoice = await getUserInput('Digite 1 para adicionar uma tarefa e 0 para sair: ')
 
-  switch (userChoise) {
+  switch (userChoice) {
     case '0':
       reader.close()
       return
     case '1':
       await addNewTask()
-      console.log('Tarefas', todoList.getTask())
+      console.log('Tarefas', todoList.getTasks())
       reader.close()
       return
     default:

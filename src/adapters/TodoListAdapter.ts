@@ -33,7 +33,7 @@ export class ToDoListAdapter implements TodoListRepository {
     }
   }
 
-  update (task: UpdateTask) {
+  update (id:number, task: UpdateTask) {
     try {
       const toUpdateTasks = this.tasks.map(item => item.id === task.id ? { ...item, ...task } : item)
       this.tasks = toUpdateTasks
