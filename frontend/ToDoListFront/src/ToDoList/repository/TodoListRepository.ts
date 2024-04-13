@@ -8,7 +8,7 @@ type Response = {
 export interface TodoListRepository {
   create (task: Task): Response
   getAll (): Response
-  update (task: UpdateTask): Response
+  update (id: number,task: UpdateTask): Response
   delete (id: number): Response
   
 }
