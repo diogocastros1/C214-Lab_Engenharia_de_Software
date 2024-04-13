@@ -53,5 +53,12 @@ jobs:
           npm install -D @types/node
           npm install -D ts-node-dev
 
+      - name: Install ts-jest
+        run: npm install ts-jest
+  
+      - name: Install types for Jest
+        run: npm install --save-dev @types/jest
+        
+
       - name: Run build
         run: npm run build
