@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Install ts-jest
-        run: npm install ts-jest
+      - name: Install types for Jest
+        run: npm install --save-dev @types/jest
       
       - name: Run unit tests
         run: npm run test:unit
